@@ -18,10 +18,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'colors-and-type.html',
       template: './pages/colors-and-type/colors-and-type.pug',
+      chunks: ['colors_and_type'],
     }),
     new HtmlWebpackPlugin({
       filename: 'form-elements.html',
       template: './pages/form-elements/form-elements.pug',
+      chunks: ['form_elements'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',

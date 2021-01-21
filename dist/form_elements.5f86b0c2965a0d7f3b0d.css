@@ -15,7 +15,26 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
-.hi {
-  width: 200px;
-  height: 200px;
+.text-field {
+  width: 320px;
+  height: 44px;
+  background: #ffffff;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+}
+
+.text-field::placeholder {
+  color: rgba(31, 32, 65, 0.25);
+  padding-left: 15px;
+}
+
+.text-field-default {
+  width: 320px;
+  height: 67px;
+}
+
+.text-field_description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

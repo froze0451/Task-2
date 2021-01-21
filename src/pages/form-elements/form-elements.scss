@@ -1,4 +1,12 @@
-.hi {
-  width: 200px;
-  height: 200px;
+@use './text-field/text-field.scss';
+
+.text-field-default {
+  width: 320px;
+  height: 67px;
+}
+
+.text-field_description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
