@@ -1,0 +1,28 @@
+.palette {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 274px;
+}
+
+.color {
+  display: flex;
+  align-items: center;
+}
+
+.color-description {
+  font-size: 19px;
+  line-height: 28px;
+  min-width: 164px;
+}
+
+.color-description span {
+  font-weight: 700;
+}
+
+.color-ractangle {
+  min-height: 70px;
+  min-width: 70px;
+  border-radius: 6px;
+  margin-right: 14%;
+}

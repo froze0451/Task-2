@@ -1,0 +1,23 @@
+mixin color(name, background, transparency)
+  .color
+    .color-ractangle(style={background: background})
+    .color-description #[span= name]#[span.quick= transparency]<br>#{background}
+
+
+block palette
+.palette
+  +color('Dark Shade', '#1F2041', ' 100%')
+  +color('Dark Shade', '#1F2041BF', ' 75%')
+  +color('Dark Shade', '#1F204180', ' 50%')
+  +color('Dark Shade', '#1F204140', ' 25%')
+  +color('Dark Shade', '#1F20410D', ' 5%')
+  +color('Purple', '#BC9CFF')
+  +color('Green', '#6FCF97')
+  
+
+
+
+  
+  
+
+  

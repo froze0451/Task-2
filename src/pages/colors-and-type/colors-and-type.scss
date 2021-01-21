@@ -1,0 +1,53 @@
+@use './palette/palette.scss';
+@use './type/type.scss';
+
+body {
+  height: 900px;
+  min-width: 320px;
+}
+
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: url('./assets/logo.svg');
+  background-size: cover;
+  width: 48px;
+  height: 48px;
+}
+
+.palette {
+  position: absolute;
+  height: 68%;
+  width: 20%;
+  top: 16%;
+  left: 10.5%;
+}
+
+.type {
+  position: absolute;
+  width: 30.2%;
+  height: 35%;
+  top: 16%;
+  left: 59%;
+}
+
+@media (max-width: 790px) {
+  .palette {
+    position: static;
+    margin: 108px auto 0;
+  }
+
+  .type {
+    position: static;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .type > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

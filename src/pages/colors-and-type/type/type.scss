@@ -1,0 +1,49 @@
+$dark-op25: #1f204140;
+$dark-op75: #1f2041bf;
+
+$title-font: 24px;
+$title-widget-font: 19px;
+$text-label-cta-font: 12px;
+$text-body: 14px;
+
+.type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.type > div {
+  display: flex;
+}
+
+.type div :first-of-type {
+  color: $dark-op25;
+  min-width: 37px;
+  margin-right: 30px;
+  text-align: right;
+}
+
+.type div :last-of-type {
+  font-weight: 700;
+}
+
+.h1 {
+  font-size: $title-font;
+}
+
+.h2 {
+  font-size: $title-widget-font;
+}
+
+.h3 {
+  font-size: $text-label-cta-font;
+}
+
+.body-text {
+  font-size: $text-body;
+}
+
+.body-text .body-text_text-example {
+  color: $dark-op75;
+  font-weight: 400;
+}
