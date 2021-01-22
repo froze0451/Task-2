@@ -1,12 +1,131 @@
 @use './text-field/text-field.scss';
+@use './text-field/_hover/text-field_hover.scss';
 
 .text-field-default {
-  width: 320px;
-  height: 67px;
+  margin-top: 140px;
+  margin-left: 141px;
+}
+
+.text-field-hover {
+  margin-top: 20px;
+  margin-left: 141px;
 }
 
 .text-field_description {
+  width: 320px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 12px;
+  padding-bottom: 8px;
+}
+
+.text-field_description p:nth-child(1) {
+  color: rgba(#1f2041, 1);
+  font-weight: 700;
+}
+
+.text-field_description p:nth-child(2) {
+  color: rgba(#1f2041, 0.5);
+}
+
+.dropdown {
+  margin-top: 20px;
+  margin-left: 141px;
+  width: 320px;
+  height: 221.56px;
+
+  .text-field {
+    padding: 0;
+  }
+}
+
+.dropdown .dropdown-field {
+  position: relative;
+  color: rgba(31, 32, 65, 0.75);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+.dropdown-field::after {
+  content: url('./dropdown/__expand-arrow/expand-arrow.svg');
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  left: 275px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropped-menu {
+  width: 320px;
+  height: 159px;
+  border-radius: 0 0 4px 4px;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.dropped-menu__option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 30px;
+
+  padding-left: 15px;
+  padding-top: 7px;
+}
+
+.dropped-menu__option > p {
+  color: rgba(#1f2041, 1);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.dropped-menu__buttons-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 92px;
+  padding: 7px;
+}
+
+.add-sub-button {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(31, 32, 65, 0.25);
+
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.add-sub-button:last-of-type {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.dropped-menu__confirm-button {
+  outline: none;
+  border: none;
+  background-color: white;
+
+  font-weight: 700;
+  font-size: 12px;
+  color: rgba(#bc9cff, 1);
 }

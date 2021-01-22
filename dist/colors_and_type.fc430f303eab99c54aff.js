@@ -19,7 +19,20 @@
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/style.scss */ \"./styles/style.scss\");\n/* harmony import */ var _colors_and_type_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./colors-and-type.scss */ \"./pages/colors-and-type/colors-and-type.scss\");\n\n\n\n//# sourceURL=webpack:///./pages/colors-and-type/colors-and-type.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/style.scss */ \"./styles/style.scss\");\n/* harmony import */ var _colors_and_type_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./colors-and-type.scss */ \"./pages/colors-and-type/colors-and-type.scss\");\n/* harmony import */ var _assets_logo_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/logo.scss */ \"./pages/assets/logo.scss\");\n\n\n\n\n//# sourceURL=webpack:///./pages/colors-and-type/colors-and-type.js?");
+
+/***/ }),
+
+/***/ "./pages/assets/logo.scss":
+/*!********************************!*\
+  !*** ./pages/assets/logo.scss ***!
+  \********************************/
+/*! namespace exports */
+/*! exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./pages/assets/logo.scss?");
 
 /***/ }),
 

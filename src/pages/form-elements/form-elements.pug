@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Form elements
-  body
-.text-field-default
-  .text-field_description
-    p text field
-    p default
-  include ./text-field/text-field
-  block text-field
+head
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  title Form elements
+body
+  .logo
+
+  .text-field-default
+    .text-field_description
+      p TEXT FIELD
+      p DEFAULT
+    include ./text-field/text-field
+    +text-field('Email')
+
+  .text-field-hover
+    .text-field_description
+      p TEXT FIELD
+      p HOVER/FOCUS
+    +text-field('This is pretty awesome','text-field_hover')
+
+  .dropdown
+    .text-field_description 
+      p DROPDOWN
+    div(class="text-field dropdown-field") Сколько гостей
+    div(class="text-field dropped-menu")
+      .dropped-menu__option
+        p ВЗРОСЛЫЕ
+        div.dropped-menu__buttons-section
+          button.add-sub-button -
+          p 0
+          button.add-sub-button +
+      .dropped-menu__option
+        p ДЕТИ
+        div.dropped-menu__buttons-section
+          button.add-sub-button -
+          p 0
+          button.add-sub-button +
+      .dropped-menu__option
+        p МЛАДЕНЦЫ
+        div.dropped-menu__buttons-section
+          button.add-sub-button -
+          p 0
+          button.add-sub-button +
+      button.dropped-menu__confirm-button ПРИМЕНИТЬ
+      
+    
+
+
   

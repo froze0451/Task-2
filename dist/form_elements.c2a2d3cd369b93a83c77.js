@@ -19,7 +19,20 @@
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/style.scss */ \"./styles/style.scss\");\n/* harmony import */ var _form_elements_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form-elements.scss */ \"./pages/form-elements/form-elements.scss\");\n\n\n\n//# sourceURL=webpack:///./pages/form-elements/form-elements.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/style.scss */ \"./styles/style.scss\");\n/* harmony import */ var _form_elements_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form-elements.scss */ \"./pages/form-elements/form-elements.scss\");\n/* harmony import */ var _assets_logo_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/logo.scss */ \"./pages/assets/logo.scss\");\n\n\n\nvar dropDowmMeny = document.querySelector('.dropdown-field');\ndropDowmMeny.addEventListener('click', function () {\n  console.log('nice one');\n});\n\n//# sourceURL=webpack:///./pages/form-elements/form-elements.js?");
+
+/***/ }),
+
+/***/ "./pages/assets/logo.scss":
+/*!********************************!*\
+  !*** ./pages/assets/logo.scss ***!
+  \********************************/
+/*! namespace exports */
+/*! exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./pages/assets/logo.scss?");
 
 /***/ }),
 

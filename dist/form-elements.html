@@ -1,16 +1,57 @@
 <!DOCTYPE html><!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form elements</title>
-  <link href="form_elements.5f86b0c2965a0d7f3b0d.css" rel="stylesheet"></head>
-  <body><script src="form_elements.dd37deb695f9cd781268.js"></script></body>
-</html>
-<div class="text-field-default">
-  <div class="text-field_description">
-    <p>text field</p>
-    <p>default</p>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form elements</title>
+<link href="form_elements.4dd9f7628e708302ef94.css" rel="stylesheet"></head>
+<body>
+  <div class="logo"></div>
+  <div class="text-field-default">
+    <div class="text-field_description">
+      <p>TEXT FIELD</p>
+      <p>DEFAULT</p>
+    </div>
+        <input class="text-field" type="text" placeholder="Email">
   </div>
-  <input class="text-field" type="text" placeholder="Email">
-</div>
+  <div class="text-field-hover">
+    <div class="text-field_description">
+      <p>TEXT FIELD</p>
+      <p>HOVER/FOCUS</p>
+    </div>
+        <input class="text-field text-field_hover" type="text" placeholder="This is pretty awesome">
+  </div>
+  <div class="dropdown">
+    <div class="text-field_description"> 
+      <p>DROPDOWN</p>
+    </div>
+    <div class="text-field dropdown-field">Сколько гостей</div>
+    <div class="text-field dropped-menu">
+      <div class="dropped-menu__option">
+        <p>ВЗРОСЛЫЕ</p>
+        <div class="dropped-menu__buttons-section">
+          <button class="add-sub-button">-</button>
+          <p>0</p>
+          <button class="add-sub-button">+</button>
+        </div>
+      </div>
+      <div class="dropped-menu__option">
+        <p>ДЕТИ</p>
+        <div class="dropped-menu__buttons-section">
+          <button class="add-sub-button">-</button>
+          <p>0</p>
+          <button class="add-sub-button">+</button>
+        </div>
+      </div>
+      <div class="dropped-menu__option">
+        <p>МЛАДЕНЦЫ</p>
+        <div class="dropped-menu__buttons-section">
+          <button class="add-sub-button">-</button>
+          <p>0</p>
+          <button class="add-sub-button">+</button>
+        </div>
+      </div>
+      <button class="dropped-menu__confirm-button">ПРИМЕНИТЬ</button>
+    </div>
+  </div>
+<script src="form_elements.c2a2d3cd369b93a83c77.js"></script></body>
