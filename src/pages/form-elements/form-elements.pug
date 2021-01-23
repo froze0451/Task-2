@@ -17,14 +17,15 @@ body
   .text-field-hover
     .text-field_description
       p TEXT FIELD
-      p HOVER/FOCUS
+      p HOVER / FOCUS
     +text-field('This is pretty awesome','text-field_hover')
 
   .dropdown
     .text-field_description 
       p DROPDOWN
     div(class="text-field dropdown-field") Сколько гостей
-    div(class="text-field dropped-menu")
+      .drop-button
+    div(class="text-field dropdown-menu invisible")
       .dropped-menu__option
         p ВЗРОСЛЫЕ
         div.dropped-menu__buttons-section
@@ -44,6 +45,11 @@ body
           p 0
           button.add-sub-button +
       button.dropped-menu__confirm-button ПРИМЕНИТЬ
+
+  
+
+
+
       
     
 

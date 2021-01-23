@@ -2,4 +2,8 @@
 
 .text-field_hover {
   border: 1px solid rgba(31, 32, 65, 0.5);
+
+  &::placeholder {
+    color: rgba(#1f2041, 0.75);
+  }
 }

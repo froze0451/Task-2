@@ -17,7 +17,7 @@
   flex-direction: row;
   justify-content: space-between;
   font-size: 12px;
-  padding-bottom: 8px;
+  padding-bottom: 5px;
 }
 
 .text-field_description p:nth-child(1) {
@@ -33,7 +33,6 @@
   margin-top: 20px;
   margin-left: 141px;
   width: 320px;
-  height: 221.56px;
 
   .text-field {
     padding: 0;
@@ -48,26 +47,34 @@
   align-items: center;
   justify-content: space-between;
   padding-left: 15px;
+  /*меняется при клике через js*/
+  border-radius: 4px 4px 4px 4px;
 }
 
-.dropdown-field::after {
-  content: url('./dropdown/__expand-arrow/expand-arrow.svg');
+.drop-button {
+  background-image: url('./dropdown/__expand-arrow/expand-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
   width: 44px;
   height: 44px;
-  position: absolute;
-  left: 275px;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  cursor: pointer;
 }
 
-.dropped-menu {
+.dropdown .dropdown-menu {
+  position: relative;
   width: 320px;
   height: 159px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-top: none;
   border-radius: 0 0 4px 4px;
+
   font-size: 12px;
   box-sizing: border-box;
+}
+
+.invisible { /*класс для невидимости dropdown*/
+  visibility: hidden;
 }
 
 .dropped-menu__option {
@@ -124,8 +131,14 @@
   outline: none;
   border: none;
   background-color: white;
+  cursor: pointer;
 
   font-weight: 700;
   font-size: 12px;
   color: rgba(#bc9cff, 1);
+
+  position: absolute;
+  bottom: 13px;
+  right: 7px;
 }
+
