@@ -29,23 +29,29 @@ body
       .dropped-menu__option
         p ВЗРОСЛЫЕ
         div.dropped-menu__buttons-section
-          button.add-sub-button -
+          button(class="add-remove-button minus")  -
           p 0
-          button.add-sub-button +
+          button(class="add-remove-button plus") +
       .dropped-menu__option
         p ДЕТИ
         div.dropped-menu__buttons-section
-          button.add-sub-button -
+          button.add-remove-button -
           p 0
-          button.add-sub-button +
+          button.add-remove-button +
       .dropped-menu__option
         p МЛАДЕНЦЫ
         div.dropped-menu__buttons-section
-          button.add-sub-button -
+          button.add-remove-button -
           p 0
-          button.add-sub-button +
+          button.add-remove-button +
       button.dropped-menu__confirm-button ПРИМЕНИТЬ
 
+  .text-field-masked
+    .text-field_description
+      p MASKED TEXT FIELD
+    +text-field('ДД.ММ.ГГГГ')
+
+  
   
 
 

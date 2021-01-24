@@ -14,7 +14,6 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: white;
 }
 @charset "UTF-8";
 .text-field {
@@ -75,6 +74,7 @@ body {
   margin-top: 20px;
   margin-left: 141px;
   width: 320px;
+  /*странная наследственность*/
 }
 .dropdown .text-field {
   padding: 0;
@@ -102,7 +102,7 @@ body {
 }
 
 .dropdown .dropdown-menu {
-  position: relative;
+  position: absolute;
   width: 320px;
   height: 159px;
   border: 1px solid rgba(31, 32, 65, 0.5);
@@ -142,7 +142,7 @@ body {
   padding: 7px;
 }
 
-.add-sub-button {
+.add-remove-button {
   box-sizing: border-box;
   width: 30px;
   height: 30px;
@@ -157,7 +157,7 @@ body {
   cursor: pointer;
 }
 
-.add-sub-button:last-of-type {
+.add-remove-button:last-of-type {
   border: 1px solid rgba(31, 32, 65, 0.5);
   color: rgba(31, 32, 65, 0.5);
 }
@@ -173,6 +173,11 @@ body {
   position: absolute;
   bottom: 13px;
   right: 7px;
+}
+
+.text-field-masked {
+  margin-top: 20px;
+  margin-left: 141px;
 }
 .logo {
   position: absolute;
