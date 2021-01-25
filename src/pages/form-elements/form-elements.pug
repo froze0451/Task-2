@@ -23,27 +23,28 @@ body
   .dropdown
     .text-field_description 
       p DROPDOWN
-    div(class="text-field dropdown-field") Сколько гостей
+    div(class="text-field dropdown-field") 
+      p Сколько гостей
       .drop-button
     div(class="text-field dropdown-menu invisible")
       .dropped-menu__option
         p ВЗРОСЛЫЕ
         div.dropped-menu__buttons-section
-          button(class="add-remove-button minus")  -
+          button(class="add-remove-button guest-minus")  -
           p 0
-          button(class="add-remove-button plus") +
+          button(class="add-remove-button guest-plus") +
       .dropped-menu__option
         p ДЕТИ
         div.dropped-menu__buttons-section
-          button.add-remove-button -
+          button(class="add-remove-button guest-minus")  -
           p 0
-          button.add-remove-button +
+          button(class="add-remove-button guest-plus") +
       .dropped-menu__option
         p МЛАДЕНЦЫ
         div.dropped-menu__buttons-section
-          button.add-remove-button -
+          button(class="add-remove-button child-minus")  -
           p 0
-          button.add-remove-button +
+          button(class="add-remove-button child-plus") +
       button.dropped-menu__confirm-button ПРИМЕНИТЬ
 
   .text-field-masked
