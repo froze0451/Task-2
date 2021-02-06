@@ -4,10 +4,13 @@ import '../assets/logo.scss'
 import IMask from 'imask';
 
 /* переменные */ 
-let dropDownField = document.querySelector('.dropdown-field')
+let dropDownField = document.querySelector('.dropdown-field') 
 let drdText = document.querySelector('.dropdown-field > p')
 let dropDowmMenuButton = document.querySelector('.drop-button')
 let dropDownMenu = document.querySelector('.dropdown-menu')
+
+let doubleDataDropdownButtons = document.querySelectorAll('.date-drowdown .drop-button');
+let wholeCalendar = document.querySelector('.calendar');
 
 let guests = 0;
 let childs = 0;
@@ -255,48 +258,119 @@ dropDownField.addEventListener('click', () => {
 
 
 
+let previousMonthButton = document.querySelector('.previous-month-button')
+let nextMonthButton = document.querySelector('.next-month-button')
+
+
+
+
 
 /*вариант календаря для 1 месяца*/ 
-/*
+
 let calendar = document.getElementById('calendar')
 
-function createCalendar(elem, year, month) {
+function createCalendar() { /*(elem, year, month)*/
 
-  let mon = month - 1; // месяцы в JS идут от 0 до 11, а не от 1 до 12
-  let d = new Date(year, mon);
+  let coco = 0;
 
-  let table = '<table><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr><tr>';
+  /*let mon = month - 1; */// месяцы в JS идут от 0 до 11, а не от 1 до 12
+  /*let d = new Date(year, month); */
+  let d = new Date(); 
+  let today = d.getDay();
+  
+  /*if (next) {
+    d.setMonth(d.getMonth() + 1);
+  }*/
+  
+  let mon = d.getMonth(); 
 
+  let pp = new Date();
+  pp.setDate(d.getDate() - getDay(d));
+  
+  
+  let table = '<tr>';
+
+  
+  /*for (let i = 0; i < getDay(d); i++) {
+    table += `<td>` + pp.getDate() + `</td>`;
+    pp.setDate(pp.getDate() - 1);
+  }*/
+  
+  
   // пробелы для первого ряда
   // с понедельника до первого дня месяца
   // * * * 1  2  3  4
   for (let i = 0; i < getDay(d); i++) {
-    table += '<td></td>';
+   table += `<td>` + pp.getDate() + `</td>`;
+    pp.setDate(pp.getDate() + 1);
+    coco++;
+    console.log(coco);
   }
 
   // <td> ячейки календаря с датами
   while (d.getMonth() == mon) {
-    table += '<td>' + d.getDate() + '</td>';
+    if (d.getDate() === today) {
+      table += '<td style="border-radius: 50%; background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); color: #FFFFFF">' + d.getDate() + '</td>';
+    } else {
+      table += '<td>' + d.getDate() + '</td>';
+    }
+    
 
     if (getDay(d) % 7 == 6) { // вс, последний день - перевод строки
       table += '</tr><tr>';
     }
-
+    
     d.setDate(d.getDate() + 1);
+    coco++;
+  }
+
+  if (coco === 28) {
+    for (let i = getDay(d); i < 7; i++) {
+      table += '<td>' + d.getDate() + '</td>';
+      d.setDate(d.getDate() + 1);
+      coco++;
+    }
+  } else {
+    if (getDay(d) != 0) {
+      for (let i = getDay(d); i < 7; i++) {
+        table += '<td>' + d.getDate() + '</td>';
+        d.setDate(d.getDate() + 1);
+        coco++;
+      }
+    }
   }
 
   // добить таблицу пустыми ячейками, если нужно
   // 29 30 31 * * * *
-  if (getDay(d) != 0) {
+  /*if (getDay(d) != 0) {
     for (let i = getDay(d); i < 7; i++) {
-      table += '<td></td>';
+      table += '<td>' + d.getDate() + '</td>';
+      d.setDate(d.getDate() + 1);
+      coco++;
     }
+  }*/
+
+  console.log(coco);
+  
+  //добиваем начало следующего месяца
+  /*if (coco === 28) {
+    table += '<tr>';
   }
 
-  // закрыть таблицу
-  table += '</tr></table>';
+  while (coco < 35) {
+    table += '<td>' + d.getDate() + '</td>';
+    d.setDate(d.getDate() + 1);
+    coco++;
+  }*/
 
-  elem.innerHTML = table;
+  console.log(coco);
+
+  // закрыть таблицу
+  table += '</tr>';
+
+  /*elem.innerHTML = table;*/
+  calendar.innerHTML = table;
+  
 }
 
 function getDay(date) { // получить номер дня недели, от 0 (пн) до 6 (вс)
@@ -305,7 +379,92 @@ function getDay(date) { // получить номер дня недели, от
   return day - 1;
 }
 
-createCalendar(calendar, 2021, 1); */
+/*createCalendar(calendar, 2021, 1); */
+createCalendar(); 
+
+/*
+previousMonthButton.addEventListener('click', () => {
+  createCalendar(calendar, 2021, 1); 
+})
+
+nextMonthButton.addEventListener('click', () => {
+  createCalendar(); 
+})*/
+
+
+let checkIn;
+let checkOut;
+let checkInDate;
+let cells = document.querySelectorAll('.calendar tbody td');
+
+cells.forEach((cell) => {     
+  cell.addEventListener('click', () => {
+    cell.style.background = 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)';
+    cell.style.borderRadius = '50%';
+    
+    
+    checkIn = [].indexOf.call(cells, cell);
+    checkInDate = checkIn + 1;
+    
+    console.log(checkIn);
+    console.log(checkInDate);
+    
+  })
+})
+
+cells.forEach((cell) => {
+  cell.addEventListener('mouseover', () => {
+    if (checkIn) {
+      console.log('nice');
+      let index = [].indexOf.call(cells, cell);
+      if (checkIn < index) {     
+        for (; index > checkIn; index--) {
+          cells[index].style.background = 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)';
+          cells[index].style.opacity = '0.25';
+        }
+      } 
+    }
+  })
+  
+  cell.addEventListener('mouseout', () => {
+    if (checkIn) {
+      console.log('nice');
+      let index = [].indexOf.call(cells, cell);
+      if (checkIn < index) {     
+        for (; index > checkIn; index--) {
+          cells[index].style.background = 'white';
+        }
+      } 
+    }
+  })
+})
+
+cells.forEach((cell) => {
+  cell.addEventListener('click', () => {
+    if (checkIn) {
+      let afterDate = [].indexOf.call(cells, cell);
+      if (afterDate < checkIn) {
+        checkIn = afterDate
+      } else {
+        checkOut = afterDate;
+        cell.style.background = 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)';
+        cell.style.borderRadius = '50%';
+        cell.style.opacity= '1';
+      }
+    }
+  })
+})
+
+
+doubleDataDropdownButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    wholeCalendar.classList.toggle('invisible')
+  })
+})
+
+
+
+
 
 
 

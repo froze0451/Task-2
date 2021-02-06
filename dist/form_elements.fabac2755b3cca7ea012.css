@@ -84,7 +84,7 @@ body {
   padding: 0;
 }
 
-.dropdown .dropdown-field {
+.dropdown .dropdown-field, .date-drowdown .dropdown-field {
   position: relative;
   color: rgba(31, 32, 65, 0.75);
   font-size: 14px;
@@ -184,6 +184,23 @@ body {
   margin-left: 141px;
 }
 
+/*двойной дропдаун выбора даты*/
+.double-date-dropdown {
+  margin-top: 40px;
+  margin-left: 141px;
+  width: 320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date-drowdown {
+  width: 150px;
+}
+.date-drowdown .text-field {
+  width: 150px;
+}
+
 /*таблица календарь*/
 .calendar {
   box-sizing: border-box;
@@ -223,6 +240,15 @@ body {
   box-sizing: border-box;
   width: 40px;
   height: 40px;
+  user-select: none;
+}
+
+.calendar tbody td {
+  cursor: pointer;
+}
+.calendar tbody td:hover {
+  border-radius: 50%;
+  background: rgba(31, 32, 65, 0.5);
 }
 
 /*поменять класс*/
@@ -253,6 +279,11 @@ body {
   height: 24px;
   cursor: pointer;
 }
+
+/*.check-in {
+  background-color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 50%;
+}*/
 .logo {
   position: absolute;
   top: 30px;
