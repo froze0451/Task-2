@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form elements</title>
-<link href="form_elements.fabac2755b3cca7ea012.css" rel="stylesheet"></head>
+<link href="form_elements.2f19cef493da3c14cb4d.css" rel="stylesheet"></head>
 <body>
   <div class="logo"></div>
   <div class="text-field-default">
@@ -21,7 +21,7 @@
     </div>
         <input class="text-field text-field_hover" type="text" placeholder="This is pretty awesome">
   </div>
-  <div class="dropdown">
+  <div class="guests-dropdown">
     <div class="text-field_description"> 
       <p>DROPDOWN</p>
     </div>
@@ -82,28 +82,84 @@
         <div class="drop-button"></div>
       </div>
     </div>
-  </div>
-  <div class="calendar invisible">
-    <div class="calendar-top">
-      <div class="calendar-move-button previous-month-button"></div>
-      <p>Январь 2021</p>
-      <div class="calendar-move-button next-month-button"></div>
+    <div class="calendar invisible">
+      <div class="calendar-top">
+        <div class="calendar-move-button previous-month-button"></div>
+        <p>Январь 2021</p>
+        <div class="calendar-move-button next-month-button"></div>
+      </div>
+      <table>
+        <thead>
+          <tr> 
+            <td>Пн</td>
+            <td>Вт</td>
+            <td>Ср</td>
+            <td>Чт</td>
+            <td>Пт </td>
+            <td>Сб</td>
+            <td>Вс</td>
+          </tr>
+        </thead>
+        <tbody id="calendar"></tbody>
+      </table>
+      <div class="calendar-buttons">
+        <button class="dropped-menu__confirm-button">ОЧИСТИТЬ</button>
+        <button class="dropped-menu__confirm-button">ПРИМЕНИТЬ</button>
+      </div>
     </div>
-    <table>
-      <thead>
-        <tr> 
-          <td>Пн</td>
-          <td>Вт</td>
-          <td>Ср</td>
-          <td>Чт</td>
-          <td>Пт </td>
-          <td>Сб</td>
-          <td>Вс</td>
-        </tr>
-      </thead>
-      <tbody id="calendar"></tbody>
-    </table>
-    <button class="dropped-menu__confirm-button">ОЧИСТИТЬ</button>
-    <button class="dropped-menu__confirm-button">ПРИМЕНИТЬ</button>
   </div>
-<script src="form_elements.67d42833f8da1d40160e.js"></script></body>
+  <div class="date-dropdown filter-date-dropdown">
+    <div class="text-field_description"> 
+      <p>FILTER DATE DROPDOWN</p>
+    </div>
+    <div class="text-field  dropdown-field"> 
+      <p>19 авг - 23 авг</p>
+      <div class="drop-button"></div>
+    </div>
+  </div>
+  <div class="subscription-text-field">
+    <div class="text-field_description">
+      <p>SUBSCRIPTION TEXT FIELD</p>
+    </div>
+    <div class="subscription-field">
+          <input class="text-field" type="text" placeholder="Email">
+      <div class="confirm-button"></div>
+    </div>
+  </div>
+  <div class="room-facilities">
+    <div class="text-field_description"> 
+      <p>DROPDOWN</p>
+      <p>DEFAULT</p>
+    </div>
+    <div class="text-field dropdown-field"> 
+      <p>Какие удобства?</p>
+      <div class="drop-button"></div>
+    </div>
+    <div class="text-field dropdown-menu invisible">
+      <div class="dropped-menu__option">
+        <p>СПАЛЬНИ</p>
+        <div class="dropped-menu__buttons-section">
+          <button class="add-remove-button bedroom-minus"> -</button>
+          <p>0</p>
+          <button class="add-remove-button bedroom-plus">+</button>
+        </div>
+      </div>
+      <div class="dropped-menu__option">
+        <p>КРОВАТИ</p>
+        <div class="dropped-menu__buttons-section">
+          <button class="add-remove-button bed-minus"> -</button>
+          <p>0</p>
+          <button class="add-remove-button bed-plus">+</button>
+        </div>
+      </div>
+      <div class="dropped-menu__option">
+        <p>ВАННЫЕ КОМНАТЫ</p>
+        <div class="dropped-menu__buttons-section">
+          <button class="add-remove-button bathroom-minus"> -</button>
+          <p>0</p>
+          <button class="add-remove-button bathroom-plus">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="form_elements.31d9f4ddf52da804a754.js"></script></body>

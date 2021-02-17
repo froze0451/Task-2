@@ -2,21 +2,23 @@
 @use './text-field/_hover/text-field_hover.scss';
 
 body {
-  height: 1000px
+  height: 1440px;
 }
 
 .text-field-default {
+  width: 320px;
   margin-top: 140px;
   margin-left: 141px;
 }
 
 .text-field-hover {
+  width: 320px;
   margin-top: 20px;
   margin-left: 141px;
 }
 
 .text-field_description {
-  width: 320px;
+  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,17 +35,19 @@ body {
   color: rgba(#1f2041, 0.5);
 }
 
-.dropdown {
+.guests-dropdown {
   margin-top: 20px;
   margin-left: 141px;
   width: 320px;
 /*странная наследственность*/
   .text-field {
-    padding: 0;
+    padding-left: 0;
   }
 }
 
-.dropdown .dropdown-field, .date-drowdown .dropdown-field {
+.guests-dropdown .dropdown-field, .date-drowdown .dropdown-field, 
+.filter-date-dropdown .dropdown-field, .subscription-text-field .dropdown-field, 
+.room-facilities .dropdown-field {
   position: relative;
   color: rgba(31, 32, 65, 0.75);
   font-size: 14px;
@@ -65,7 +69,7 @@ body {
   cursor: pointer;
 }
 
-.dropdown .dropdown-menu {
+.guests-dropdown .dropdown-menu {
   position: absolute;
 
   width: 320px;
@@ -76,6 +80,8 @@ body {
 
   font-size: 12px;
   box-sizing: border-box;
+
+  z-index: 1;
 }
 
 .invisible { /*класс для невидимости dropdown*/
@@ -148,35 +154,38 @@ body {
 }
 
 .text-field-masked {
+  width: 320px;
   margin-top: 20px;
   margin-left: 141px;
 }
 
 /*двойной дропдаун выбора даты*/
 .double-date-dropdown {
+  position: relative;
   margin-top: 40px;
   margin-left: 141px;
   width: 320px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
 }
 
 .date-drowdown {
   width: 150px;
-
-  .text-field {
-    width: 150px;
-  }
 }
-
-
 
 /*таблица календарь*/
 .calendar {
+  position: absolute;
+  top: 50px;
+  left: -141px;
+
   box-sizing: border-box;
   margin-top: 20px;
   margin-left: 141px;
+
+  background-color: #FFFFFF;
 
   width: 320px;
   height: 369px;
@@ -187,6 +196,7 @@ body {
   box-shadow: 0px 10px 20px 0px rgba(#1F2041, 0.05);
 
   padding: 20px;
+  z-index: 2;
 }
 
 .calendar-top {
@@ -203,10 +213,18 @@ body {
   font-weight: 700;
 }
 
+.calendar thead {
+  color: #BC9CFF;
+  font-weight: bold;
+}
+
 .calendar table {
   width: 280px;
   height: 240px;
   margin: 30px auto 20px;
+
+  font-size: 12px;
+  color: rgba(31, 32, 65, 0.5);
 
   border-spacing: 0px;
 }
@@ -237,6 +255,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  font-size: 12px;
 }
 
 .calendar-move-button:first-of-type {
@@ -259,8 +279,67 @@ body {
   cursor: pointer;
 }
 
-/*.check-in {
-  background-color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 50%;
-}*/
+/*filter date dropdown*/
+
+.filter-date-dropdown {
+  width: 266px;
+  margin-left: 141px;
+  margin-top: 41px;
+}
+
+/*subscription text field*/
+
+.subscription-text-field {
+  margin-top: 41px;
+  margin-left: 141px;
+  width: 266px;
+}
+
+.subscription-field {
+  position: relative;
+}
+
+.confirm-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url('../assets/arrow_forward.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 44px;
+  height: 44px;
+
+  cursor: pointer;
+}
+
+/*room facilities dropdown*/
+.room-facilities {
+  width: 266px;
+
+  margin-top: 100px;
+  margin-left: 141px;
+}
+
+.room-facilities .dropdown-field {
+  border-radius: 4px 4px 0 0;
+}
+
+.room-facilities .dropdown-menu {
+  position: absolute;
+
+  width: 266px;
+  height: 119px;
+
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+
+  font-size: 12px;
+  box-sizing: border-box;
+
+  z-index: 1;
+
+  padding-left: 0; /*убираем паддинг .text-field родителя*/
+}
+
 
