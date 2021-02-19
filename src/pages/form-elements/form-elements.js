@@ -5,15 +5,26 @@ import IMask from 'imask'
 
 /* переменные */
 let dropDownField = document.querySelector('.dropdown-field')
-let drdText = document.querySelector('.dropdown-field > p')
-let dropDowmMenuButton = document.querySelector('.drop-button')
-let dropDownMenu = document.querySelector('.dropdown-menu')
+let drdText = document.querySelector('.guests-dropdown .dropdown-field > p')
+
+/*let dropDowmMenuButton = document.querySelector('.drop-button')
+let dropDownMenu = document.querySelector('.dropdown-menu')*/
+let dropDowmMenuButton = document.querySelector('.guests-dropdown .drop-button')
+let dropDownMenu = document.querySelector('.guests-dropdown .dropdown-menu')
 
 let doubleDataDropdownButtons = document.querySelectorAll('.date-drowdown .drop-button')
 let wholeCalendar = document.querySelector('.calendar')
 
+let roomFacilitiesDropdownButton = document.querySelector('.room-facilities .drop-button')
+let roomFacilitiesDropdownMenu = document.querySelector('.room-facilities .dropdown-menu')
+let roomFacilitiesDropdownField = document.querySelector('.room-facilities .dropdown-field')
+let roomFacilitiesText = document.querySelector('.room-facilities .dropdown-field > p')
+
 let guests = 0
 let childs = 0
+let bedrooms = 0
+let beds = 0
+let bathrooms = 0
 
 /*функции*/
 
@@ -62,6 +73,73 @@ function childsCount(childs) {
   }
 }
 
+/* для room facilities dropdown */
+function bedroomsCount(bedrooms) { 
+  if (bedrooms < 21) {
+    if (bedrooms === 0) {
+      return ''
+    } else if (bedrooms === 1 || bedrooms === 21) {
+      return `${bedrooms} спальня`
+    } else if ((bedrooms > 1 && bedrooms < 5) || (bedrooms > 21 && bedrooms < 25)) {
+      return `${bedrooms} спальни`
+    } else {
+      return `${bedrooms} спален`
+    }
+  } else {
+    if (/1$/.test(bedrooms)) {
+      return `${bedrooms} спальня`
+    } else if (/[234]$/.test(bedrooms)) {
+      return `${bedrooms} спальни`
+    } else {
+      return `${bedrooms} спален`
+    }
+  }
+}
+
+function bedsCount(beds) { 
+  if (beds < 21) {
+    if (beds === 0) {
+      return ''
+    } else if (beds === 1 || beds === 21) {
+      return `, ${beds} кровать`
+    } else if ((beds > 1 && beds < 5) || (beds > 21 && beds < 25)) {
+      return `, ${beds} кровати`
+    } else {
+      return `, ${beds} кроватей`
+    }
+  } else {
+    if (/1$/.test(beds)) {
+      return `, ${beds} кровать`
+    } else if (/[234]$/.test(beds)) {
+      return `, ${beds} кровати`
+    } else {
+      return `, ${beds} кроватей`
+    }
+  }
+}
+
+function bathroomsCount(bathrooms) { 
+  if (bathrooms < 21) {
+    if (bathrooms === 0) {
+      return ''
+    } else if (bathrooms === 1 || bathrooms === 21) {
+      return `, ${bathrooms} ванная комната`
+    } else if ((bathrooms > 1 && bathrooms < 5) || (bathrooms > 21 && bathrooms < 25)) {
+      return `, ${bathrooms} ванной комнаты`
+    } else {
+      return `, ${bathrooms} ванных комнат`
+    }
+  } else {
+    if (/1$/.test(bathrooms)) {
+      return `, ${bathrooms} ванная комната`
+    } else if (/[234]$/.test(bathrooms)) {
+      return `, ${bathrooms} ванной комнаты`
+    } else {
+      return `, ${bathrooms} ванных комнат`
+    }
+  }
+}
+
 /* E V E N T S */
 
 /*маска для поля даты*/
@@ -75,7 +153,7 @@ let dateMask = IMask(document.querySelector('.text-field-masked input'), {
 
 /* GUESTS DROPDOWN */
 
-/* скрипты выпадения меню */
+/* скрипты выпадения меню и стиля border*/
 
 dropDowmMenuButton.addEventListener('click', () => {
   dropDownMenu.classList.toggle('invisible')
@@ -97,37 +175,7 @@ dropDownField.addEventListener('mouseover', () => {
   dropDownField.style.border = '1px solid rgba(31, 32, 65, 0.5)'
 })
 
-/* подсчет младенцев */
-let removeChild = document.querySelector('.child-minus')
-let addChild = document.querySelector('.child-plus')
 
-removeChild.addEventListener('click', () => {
-  if (Number(removeChild.nextElementSibling.textContent) > 0) {
-    removeChild.nextElementSibling.textContent =
-      Number(removeChild.nextElementSibling.textContent) - 1
-    childs--
-    drdText.textContent = guestsCount(guests) + childsCount(childs)
-
-    if (drdText.textContent === '') {
-      drdText.textContent = 'Сколько гостей'
-    } else if (guestsCount(guests) === '') {
-      drdText.textContent = drdText.textContent.slice(2)
-    }
-  }
-})
-
-addChild.addEventListener('click', () => {
-  addChild.previousElementSibling.textContent =
-    Number(addChild.previousElementSibling.textContent) + 1
-  childs++
-  drdText.textContent = guestsCount(guests) + childsCount(childs)
-
-  if (drdText.textContent === '') {
-    drdText.textContent = 'Сколько гостей'
-  } else if (guestsCount(guests) === '') {
-    drdText.textContent = drdText.textContent.slice(2)
-  }
-})
 
 /*прибавление, убавление гостей через querySelectorAll*/
 let removeGuest = document.querySelectorAll('.guest-minus')
@@ -165,6 +213,143 @@ addGuest.forEach((addButton) => {
     }
   })
 })
+
+/* подсчет младенцев */
+let removeChild = document.querySelector('.child-minus')
+let addChild = document.querySelector('.child-plus')
+
+removeChild.addEventListener('click', () => {
+  if (Number(removeChild.nextElementSibling.textContent) > 0) {
+    removeChild.nextElementSibling.textContent =
+      Number(removeChild.nextElementSibling.textContent) - 1
+    childs--
+    drdText.textContent = guestsCount(guests) + childsCount(childs)
+
+    if (drdText.textContent === '') {
+      drdText.textContent = 'Сколько гостей'
+    } else if (guestsCount(guests) === '') {
+      drdText.textContent = drdText.textContent.slice(2)
+    }
+  }
+})
+
+addChild.addEventListener('click', () => {
+  addChild.previousElementSibling.textContent =
+    Number(addChild.previousElementSibling.textContent) + 1
+  childs++
+  drdText.textContent = guestsCount(guests) + childsCount(childs)
+
+  if (drdText.textContent === '') {
+    drdText.textContent = 'Сколько гостей'
+  } else if (guestsCount(guests) === '') {
+    drdText.textContent = drdText.textContent.slice(2)
+  }
+})
+
+/* facilities dropdown эвенты */
+
+/* bedrooms */
+let removeBedroom = document.querySelector('.bedroom-minus')
+let addBedroom = document.querySelector('.bedroom-plus')
+
+removeBedroom.addEventListener('click', () => {
+  if (Number(removeBedroom.nextElementSibling.textContent) > 0) {
+    removeBedroom.nextElementSibling.textContent =
+      Number(removeBedroom.nextElementSibling.textContent) - 1
+    bedrooms--
+
+    roomFacilitiesText.textContent = bedroomsCount(bedrooms) + bedsCount(beds) + bathroomsCount(bathrooms)
+
+    if (roomFacilitiesText.textContent === '') {
+      roomFacilitiesText.textContent = 'Какие удобства?'
+    } else if (bedroomsCount(bedrooms)  === '') {
+      roomFacilitiesText.textContent = roomFacilitiesText.textContent.slice(2)
+    }
+  }
+})
+
+addBedroom.addEventListener('click', () => {
+  addBedroom.previousElementSibling.textContent =
+    Number(addBedroom.previousElementSibling.textContent) + 1
+  bedrooms++
+  
+  roomFacilitiesText.textContent = bedroomsCount(bedrooms) + bedsCount(beds) + bathroomsCount(bathrooms)
+
+  if (roomFacilitiesText.textContent === '') {
+    roomFacilitiesText.textContent = 'Какие удобства?'
+  } else if (bedroomsCount(bedrooms) === '') {
+    roomFacilitiesText.textContent = roomFacilitiesText.textContent.slice(2)
+  }
+})
+
+/* beds */
+let removeBed = document.querySelector('.bed-minus')
+let addBed = document.querySelector('.bed-plus')
+
+removeBed.addEventListener('click', () => {
+  if (Number(removeBed.nextElementSibling.textContent) > 0) {
+    removeBed.nextElementSibling.textContent =
+      Number(removeBed.nextElementSibling.textContent) - 1
+    beds--
+
+    roomFacilitiesText.textContent = bedroomsCount(bedrooms) + bedsCount(beds) + bathroomsCount(bathrooms)
+
+    if (roomFacilitiesText.textContent === '') {
+      roomFacilitiesText.textContent = 'Какие удобства?'
+    } else if (bedroomsCount(bedrooms)  === '') {
+      roomFacilitiesText.textContent = roomFacilitiesText.textContent.slice(2)
+    }
+  }
+})
+
+addBed.addEventListener('click', () => {
+  addBed.previousElementSibling.textContent =
+    Number(addBed.previousElementSibling.textContent) + 1
+  beds++
+  
+  roomFacilitiesText.textContent = bedroomsCount(bedrooms) + bedsCount(beds) + bathroomsCount(bathrooms)
+
+  if (roomFacilitiesText.textContent === '') {
+    roomFacilitiesText.textContent = 'Какие удобства?'
+  } else if (bedroomsCount(bedrooms) === '') {
+    roomFacilitiesText.textContent = roomFacilitiesText.textContent.slice(2)
+  }
+})
+
+/* bathrooms */
+let removeBathroom = document.querySelector('.bathroom-minus')
+let addBathroom = document.querySelector('.bathroom-plus')
+
+removeBathroom.addEventListener('click', () => {
+  if (Number(removeBathroom.nextElementSibling.textContent) > 0) {
+    removeBathroom.nextElementSibling.textContent =
+      Number(removeBathroom.nextElementSibling.textContent) - 1
+    bathrooms--
+
+    roomFacilitiesText.textContent = bedroomsCount(bedrooms) + bedsCount(beds) + bathroomsCount(bathrooms)
+
+    if (roomFacilitiesText.textContent === '') {
+      roomFacilitiesText.textContent = 'Какие удобства?'
+    } else if (bedroomsCount(bedrooms)  === '') {
+      roomFacilitiesText.textContent = roomFacilitiesText.textContent.slice(2)
+    }
+  }
+})
+
+addBathroom.addEventListener('click', () => {
+  addBathroom.previousElementSibling.textContent =
+    Number(addBathroom.previousElementSibling.textContent) + 1
+  bathrooms++
+  
+  roomFacilitiesText.textContent = bedroomsCount(bedrooms) + bedsCount(beds) + bathroomsCount(bathrooms)
+
+  if (roomFacilitiesText.textContent === '') {
+    roomFacilitiesText.textContent = 'Какие удобства?'
+  } else if (bedroomsCount(bedrooms) === '') {
+    roomFacilitiesText.textContent = roomFacilitiesText.textContent.slice(2)
+  }
+})
+
 
 /* calendar */
 
@@ -366,4 +551,19 @@ doubleDataDropdownButtons.forEach((button) => {
   button.addEventListener('click', () => {
     wholeCalendar.classList.toggle('invisible')
   })
+})
+
+/* room facilities dropdown events */
+roomFacilitiesDropdownButton.addEventListener('click', () => {
+  roomFacilitiesDropdownMenu.classList.toggle('invisible')
+})
+
+roomFacilitiesDropdownField.addEventListener('mouseout', () => {
+  if (roomFacilitiesDropdownMenu.classList.contains('invisible')) {
+    roomFacilitiesDropdownField.style.border = '1px solid rgba(31, 32, 65, 0.25)'
+  }
+})
+
+roomFacilitiesDropdownField.addEventListener('mouseover', () => {
+  roomFacilitiesDropdownField.style.border = '1px solid rgba(31, 32, 65, 0.5)'
 })
