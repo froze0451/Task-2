@@ -342,4 +342,42 @@ body {
   padding-left: 0; /*убираем паддинг .text-field родителя*/
 }
 
+/* expandable checkbox list */
+.expandable-checkbox-list {
+  margin-left: 141px;
+  margin-top: 40px;
+  
+  width: 266px;
+}
+
+.list-name {
+  font-size: 12px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox-button {
+  font-size: 14px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.checkbox-button input {
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid #BC9CFF;
+  border-radius: 4px;
+}
+
+.checkbox-button label {
+  margin-left: 10px;
+}
+
 
