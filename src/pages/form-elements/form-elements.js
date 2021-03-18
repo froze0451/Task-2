@@ -4,17 +4,17 @@ import '../assets/logo.scss'
 import IMask from 'imask'
 
 /* переменные */
+/*guests dropdown*/ 
 let dropDownField = document.querySelector('.dropdown-field')
 let drdText = document.querySelector('.guests-dropdown .dropdown-field > p')
-
-/*let dropDowmMenuButton = document.querySelector('.drop-button')
-let dropDownMenu = document.querySelector('.dropdown-menu')*/
 let dropDowmMenuButton = document.querySelector('.guests-dropdown .drop-button')
 let dropDownMenu = document.querySelector('.guests-dropdown .dropdown-menu')
 
-let doubleDataDropdownButtons = document.querySelectorAll('.date-drowdown .drop-button')
+/*double date dropdown*/
+let doubleDateDropdownButtons = document.querySelectorAll('.date-drowdown .drop-button')
 let wholeCalendar = document.querySelector('.calendar')
 
+/* room facilities dropdown*/
 let roomFacilitiesDropdownButton = document.querySelector('.room-facilities .drop-button')
 let roomFacilitiesDropdownMenu = document.querySelector('.room-facilities .dropdown-menu')
 let roomFacilitiesDropdownField = document.querySelector('.room-facilities .dropdown-field')
@@ -25,6 +25,10 @@ let childs = 0
 let bedrooms = 0
 let beds = 0
 let bathrooms = 0
+
+/* expandable checkbox list */
+let expandableListExpandButton = document.querySelector('.expandable-checkbox-list .drop-button')
+let expandableListChechboxSection = document.querySelector('.expandable-checkbox-list .checkbox-section')
 
 /*функции*/
 
@@ -547,7 +551,7 @@ cells.forEach((cell) => {
   })
 })
 
-doubleDataDropdownButtons.forEach((button) => {
+doubleDateDropdownButtons.forEach((button) => {
   button.addEventListener('click', () => {
     wholeCalendar.classList.toggle('invisible')
   })
@@ -567,3 +571,18 @@ roomFacilitiesDropdownField.addEventListener('mouseout', () => {
 roomFacilitiesDropdownField.addEventListener('mouseover', () => {
   roomFacilitiesDropdownField.style.border = '1px solid rgba(31, 32, 65, 0.5)'
 })
+
+
+/* expandable checkbox list */
+expandableListExpandButton.addEventListener('click', () => {
+  expandableListExpandButton.classList.toggle('expand-list')
+
+  if (expandableListExpandButton.classList.contains('expand-list')) {
+    expandableListChechboxSection.style.visibility = 'visible';
+  } else {
+    expandableListChechboxSection.style.visibility = 'hidden';
+  }
+})
+
+
+

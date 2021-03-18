@@ -352,11 +352,19 @@ body {
 
 .list-name {
   font-size: 12px;
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.checkbox-section {
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  visibility: hidden;
+  color: #1F204180;
 }
 
 .checkbox-button {
@@ -365,7 +373,10 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  
+}
+
+.expand-list {
+  transform: rotate(180deg);
 }
 
 .checkbox-button input {
@@ -374,10 +385,26 @@ body {
 
   border: 1px solid #BC9CFF;
   border-radius: 4px;
+
+  margin-right: 10px;
 }
 
-.checkbox-button label {
-  margin-left: 10px;
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  outline:none;
 }
 
-
+input[type="checkbox"]:checked {
+  background-color: red;
+  border-color: red;
+  color: red;
+  
+  border: 1px solid #BC9CFF;
+  background: url('../assets/checkbox-check-mark.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 40%;
+}
